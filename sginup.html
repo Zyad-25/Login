@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/animation.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    <div class="contanier d-flex justify-content-center align-items-center">
+        <div class="row w-65 p-4 mt-5 shadoow">
+            <div class="col-md-12 text-center py-4">
+                <h1>Smart Login System</h1>
+                <input type="text" class="form-control my-3 bg-transparent text-white" id="userName"
+                    placeholder="Enter your name">
+                <p class="text-warning fw-medium text-start d-none" id="valdNam">Username must be at least 8 characters long.</p>
+                <input type="text" class="form-control my-3 bg-transparent text-white" id="userEmail"
+                    placeholder="Enter your email">
+                <p class="text-warning fw-medium text-start d-none" id="valdEml">Email must contain<span class="text-danger">
+                        "text @gmail.com"</span></p>
+                <input type="password" class="form-control my-3 bg-transparent text-white" id="userPassword"
+                    placeholder="Enter your password">
+                <p class="text-warning fw-medium text-start d-none" id="valdPass">password must be at least 8 characters long and must
+                    contain A-Z and a-z and 0-9 and Special character</p>
+                <p class="text-danger fw-bold d-none" id="inputReq">All inputs is required</p>    
+                <p class="text-success fw-bold d-none" id="sucsess">Sucsess</p>    
+                <a class="btn btn-outline-info w-100 my-3" id="signUp">Sign Up</a>
+                <p class="text-white">Don't have an account? <a class="text-white" href="index.html">Signin</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="JS/index.js"></script>
+    <script src="JS/bootstrap.bundle.js"></script>
+</body>
+
+</html>
