@@ -7,7 +7,7 @@ var valdNam = document.getElementById('valdNam');
 var valdEml = document.getElementById('valdEml');
 var valdPass = document.getElementById('valdPass');
 var sucsess = document.getElementById('sucsess');
-
+var emailExis = document.getElementById('emailExis');
 var arr;
 var valName = /^\w{3,}(\s+\w+)*$/
 var valEmail = /^[a-zA-Z0-9_]+@gmail+\.com$/
@@ -65,29 +65,44 @@ if(signBtn){
     signBtn = null;
 }
 function signup(){
-    if(validation()){
-        inputReq.classList.add('d-none');
-        valdNam.classList.add('d-none');
-        valdEml.classList.add('d-none');
-        valdPass.classList.add('d-none');
-        sucsess.classList.remove('d-none');
-        signupUser();
-        console.log(arr);
-        setTimeout(function() {
-            window.location.href = 'index.html';
-        }, 500);
+    if(checkEmail()){
+        emailExis.classList.remove('d-none');
     }else{
-      if(!name1){
-        valdNam.classList.remove('d-none');
-      }  
-      if(!email1){
-        valdEml.classList.remove('d-none');
-      }  
-      if(!pass1){
-        valdPass.classList.remove('d-none');
+        emailExis.classList.add('d-none');
+        if(validation()){
+            inputReq.classList.add('d-none');
+            valdNam.classList.add('d-none');
+            valdEml.classList.add('d-none');
+            valdPass.classList.add('d-none');
+            sucsess.classList.remove('d-none');
+            signupUser();
+            console.log(arr);
+            setTimeout(function() {
+                window.location.href = 'index.html';
+            }, 500);
+        }else{
+          if(!name1){
+            valdNam.classList.remove('d-none');
+          }  
+          if(!email1){
+            valdEml.classList.remove('d-none');
+          }  
+          if(!pass1){
+            valdPass.classList.remove('d-none');
+        }
+            inputReq.classList.remove('d-none');
     }
-        inputReq.classList.remove('d-none');
+    }
 }
+
+function checkEmail(){
+    var ch = false;
+    for(var i = 0; i < arr.length; ++i){
+        if(userEmail.value == arr[i].email){
+           ch = true;
+        }
+    }
+    return ch;
 }
 
 if(userName){
